@@ -1,12 +1,11 @@
-import { Panel, Flex, Typography, Avatar, Grid, Button } from '@maxhub/max-ui';
+import { Panel, Flex, Typography, Avatar, Grid, Button, Input } from '@maxhub/max-ui';
 
 const App = () => (
-  <Panel>
+  <Panel className='fullscreen'>
     <Flex direction="column" align="center" gap={16} style={{ padding: 24 }}>
-      <Typography.Title>Привет, MAX UI!</Typography.Title>
-      <Typography.Text>Библиотека работает!</Typography.Text>
+      <Typography.Title>Привет, MAX UI, React Component.</Typography.Title>
 
-      <Avatar.Container size={96} form="squircle">
+      <Avatar.Container size={96} form="squircle" className='avatar'>
         <Avatar.Image src="src/assets/react.svg" />
       </Avatar.Container>
 
@@ -32,6 +31,21 @@ const App = () => (
           Начать квиз
         </Button>
       
+        <Grid cols={1} style={{ width: '100%', marginTop: 36 }}>
+          <Flex direction="column" align="center">
+            <Typography.Title>Необходимо набрать</Typography.Title>
+            <Typography.Title>70+</Typography.Title>
+          </Flex>
+        </Grid>
+
+        <div style={{ width: '90%', border:'2px solid #007AFF', borderRadius:'20px', position:'fixed', bottom:'30px'}}>
+          <Input
+            defaultValue=""
+            iconBefore={<img src="src/assets/react.svg" style={{ width: "30px" }} />}
+            mode="secondary"
+            placeholder="Placeholder"
+          />
+        </div>
     </Flex>
   </Panel>
 );
