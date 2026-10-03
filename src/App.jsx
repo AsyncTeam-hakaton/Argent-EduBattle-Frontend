@@ -1,55 +1,39 @@
-import { Panel, Grid, Container, Flex, Avatar, Typography, Button, Spinner} from '@maxhub/max-ui';
+import { Panel, Flex, Typography, Avatar, Grid, Button } from '@maxhub/max-ui';
 
 const App = () => (
-    <Panel mode="secondary" className="panel">
-        <Grid gap={12} cols={1}>
-            <Container className="me">
-                <Flex direction="column" align="center" gap={20}>
-                    <Avatar.Container size={112} form="squircle" className="me__avatar">
-                        <Avatar.Image src="src/assets/react.svg"/>
-                    </Avatar.Container>
+  <Panel>
+    <Flex direction="column" align="center" gap={16} style={{ padding: 24 }}>
+      <Typography.Title>Привет, MAX UI!</Typography.Title>
+      <Typography.Text>Библиотека работает!</Typography.Text>
 
-                    <Typography.Title>Hatsune Miku</Typography.Title>
-                    <Button
-                      appearance="themed"
-                      mode="primary"
-                      onClick={() => {}}
-                      size="medium"
-                    >
-                      <Spinner
-                          appearance="primary"
-                          size={20}
-                        />
-                    </Button>
-                </Flex>
-            </Container>
+      <Avatar.Container size={96} form="squircle">
+        <Avatar.Image src="src/assets/react.svg" />
+      </Avatar.Container>
+
+        <Typography.Title>Hatsune Miku</Typography.Title>
+        <Typography.Text>Ученик • 9А класс</Typography.Text>
+
+        <Grid gap={8} cols={3} style={{ width: '100%', marginTop: 16 }}>
+          <Flex direction="column" align="center">
+            <Typography.Title>12</Typography.Title>
+            <Typography.Text>Квизов</Typography.Text>
+          </Flex>
+          <Flex direction="column" align="center">
+            <Typography.Title>87%</Typography.Title>
+            <Typography.Text>Средний</Typography.Text>
+          </Flex>
+          <Flex direction="column" align="center">
+            <Typography.Title>3</Typography.Title>
+            <Typography.Text>Места</Typography.Text>
+          </Flex>
         </Grid>
 
-        <Grid gap={12} cols={1}>
-            <Container className="me">
-                <Flex direction="column" align="center" gap={20}>
-                    <Avatar.Container size={112} form="squircle" className="me__avatar">
-                        <Avatar.Image src="src/assets/react.svg"/>
-                    </Avatar.Container>
-
-                    <Typography.Title>Hatsune Miku</Typography.Title>
-                    <Button
-                      appearance="themed"
-                      mode="primary"
-                      onClick={() => {}}
-                      size="medium"
-                    >
-                      <Spinner
-                          appearance="primary"
-                          size={20}
-                        />
-                    </Button>
-                </Flex>
-            </Container>
-        </Grid>
-    </Panel>
-    
-    
-)
+        <Button appearance="themed" mode="primary" size="large" style={{ width: '50%', marginTop: 24 }}>
+          Начать квиз
+        </Button>
+      
+    </Flex>
+  </Panel>
+);
 
 export default App;
