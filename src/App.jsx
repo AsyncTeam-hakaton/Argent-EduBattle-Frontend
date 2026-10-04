@@ -1,4 +1,5 @@
 import { Panel, Flex, Typography, Avatar, Grid, Button, Input } from '@maxhub/max-ui';
+import BigActionButton from './components/BigActionButt';
 
 const App = () => (
   <Panel className='fullscreen'>
