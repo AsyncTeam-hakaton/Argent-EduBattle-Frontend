@@ -1,8 +1,13 @@
-import { Panel, Flex, Typography, Avatar, Grid, Button, Input } from '@maxhub/max-ui';
+import { Panel, Flex, Typography, Grid, Button, Input } from '@maxhub/max-ui';
 
 import BigActionButton from './components/BigActionButt';
-
+import QuizCard from './components/QuizCard';
+ 
 import createIcon from "./assets/teacher/create.png";
+import memberIcon from "./assets/teacher/members.png";
+
+import starIcon from "./assets/student/star.png";
+import trophyIcon from "./assets/student/trophy.png";
 
 const App = () => (
   <Panel className="fullscreen">
@@ -11,17 +16,24 @@ const App = () => (
       style={{ padding: 26, height: '100dvh', overflow: 'hidden' }}
     >
       {/* Заголовок */}
-      <Typography.Title style={{ fontSize: 28, marginBottom: 16, fontWeight: 700, letterSpacing: 0.1 }}>
+      <Typography.Title style={{ fontSize: 28, marginBottom: 26, fontWeight: 700, letterSpacing: 0.1 }}>
         Последние квизы:
       </Typography.Title>
 
-      {/* Скролл-зона со списком (пока пусто) */}
+      {/* Скролл-зона со списком */}
       <div style={{ flex: 1, overflowY: 'auto', width: "100%", textAlign: 'center'}}>
-        <div style={{marginTop: "20px"}}>
+        {/* <div style={{marginTop: "20px"}}>
         <Typography.Text style={{ opacity: 0.5, textAlign: 'center'}}>
           Вы не провели ещё ни одного квиза.
         </Typography.Text>
-        </div>
+        </div> */}
+
+          <QuizCard 
+            title="Docker"
+            date="22.09"
+            leftIcon={<img src={memberIcon} style={{ width: 28 }} />}
+            leftText="14"
+          />
       </div>
 
       {/* Кнопка внизу */}

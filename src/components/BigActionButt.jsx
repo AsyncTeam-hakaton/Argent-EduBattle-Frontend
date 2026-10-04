@@ -4,13 +4,14 @@ const BigActionButton = ({ title, subtitle, icon, onClick }) => (
   <button
     onClick={onClick}
     style={{
-      width: '100%',
+      width: '95%',
       background: 'linear-gradient(90deg, #9B59D6 18%, #4A90E2 100%)',
       border: 'none',
       borderRadius: 26,
       padding: '16px 24px',
       display: 'flex',
       justifyContent: 'space-between',
+      alignSelf: 'center',
       alignItems: 'center',
       color: '#ebebeb',
       cursor: 'pointer',
