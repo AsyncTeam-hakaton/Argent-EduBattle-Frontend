@@ -1,54 +1,39 @@
 import { Panel, Flex, Typography, Avatar, Grid, Button, Input } from '@maxhub/max-ui';
+
 import BigActionButton from './components/BigActionButt';
 
+import createIcon from "./assets/teacher/create.png";
+
 const App = () => (
-  <Panel className='fullscreen'>
-    <Flex direction="column" align="center" gap={16} style={{ padding: 24 }}>
-      <Typography.Title>Привет, MAX UI, React Component.</Typography.Title>
+  <Panel className="fullscreen">
+    <Flex
+      direction="column"
+      style={{ padding: 26, height: '100dvh', overflow: 'hidden' }}
+    >
+      {/* Заголовок */}
+      <Typography.Title style={{ fontSize: 28, marginBottom: 16, fontWeight: 700, letterSpacing: 0.1 }}>
+        Последние квизы:
+      </Typography.Title>
 
-      <Avatar.Container size={96} form="squircle" className='avatar'>
-        <Avatar.Image src="src/assets/react.svg" />
-      </Avatar.Container>
-
-        <Typography.Title>Hatsune Miku</Typography.Title>
-        <Typography.Text>Ученик • 9А класс</Typography.Text>
-
-        <Grid gap={8} cols={3} style={{ width: '100%', marginTop: 16 }}>
-          <Flex direction="column" align="center">
-            <Typography.Title>12</Typography.Title>
-            <Typography.Text>Квизов</Typography.Text>
-          </Flex>
-          <Flex direction="column" align="center">
-            <Typography.Title>87%</Typography.Title>
-            <Typography.Text>Средний</Typography.Text>
-          </Flex>
-          <Flex direction="column" align="center">
-            <Typography.Title>3</Typography.Title>
-            <Typography.Text>Места</Typography.Text>
-          </Flex>
-        </Grid>
-
-        <Button appearance="themed" mode="primary" size="large" style={{ width: '50%', marginTop: 24 }}>
-          Начать квиз
-        </Button>
-      
-        <Grid cols={1} style={{ width: '100%', marginTop: 36 }}>
-          <Flex direction="column" align="center">
-            <Typography.Title>Необходимо набрать</Typography.Title>
-            <Typography.Title>70+</Typography.Title>
-          </Flex>
-        </Grid>
-
-        <div style={{ width: '90%', border:'2px solid #007AFF', borderRadius:'20px', position:'fixed', bottom:'30px'}}>
-          <Input
-            defaultValue=""
-            iconBefore={<img src="src/assets/react.svg" style={{ width: "30px" }} />}
-            mode="secondary"
-            placeholder="Placeholder"
-          />
+      {/* Скролл-зона со списком (пока пусто) */}
+      <div style={{ flex: 1, overflowY: 'auto', width: "100%", textAlign: 'center'}}>
+        <div style={{marginTop: "20px"}}>
+        <Typography.Text style={{ opacity: 0.5, textAlign: 'center'}}>
+          Вы не провели ещё ни одного квиза.
+        </Typography.Text>
         </div>
+      </div>
+
+      {/* Кнопка внизу */}
+      <BigActionButton
+        title="Создать"
+        subtitle="группу, лекцию, квиз"
+        icon={<img src={createIcon} style={{ width: 54 }} />}
+        onClick={() => alert('Создаlol')}
+      />
     </Flex>
   </Panel>
 );
+
 
 export default App;
