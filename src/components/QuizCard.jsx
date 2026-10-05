@@ -10,7 +10,9 @@ const QuizCard = ({title, date, leftIcon, leftText, rightContent}) => (
         paddingBottom: '8px',
         color: '#ebebeb',
         fontFamily: 'inherit',
-        position:'relative'
+        position:'relative',
+        display:'flex',
+        flexDirection:'column'
     }}>
         {/* верхняя часть, название темы, дата */}
         <div style={{ display: 'flex', justifyContent: "space-between"}}>
@@ -22,13 +24,10 @@ const QuizCard = ({title, date, leftIcon, leftText, rightContent}) => (
             </div>
         </div>
 
-        {/* Линия разделения */}
-        <div style={{width: "94%", borderBottom: "2px solid #595A62", 
-            position: "absolute", top:"50%", left:"50%", transform:"translate(-50%)"}}>
-        </div>
-
         {/* нижняя часть, колво участников/место, пустота/кол-во баллов */}
-        <div style={{ display: 'Flex', justifyContent: "space-between", marginTop:"13px"}}>
+        <div style={{ display: 'Flex', justifyContent: "space-between", borderTop: '2px solid #595A62',
+            marginTop:'auto'
+        }}>
             {leftIcon && (
         <div style={{display: "flex"}}>
             {leftIcon}
