@@ -21,7 +21,9 @@ const App = () => (
       </Typography.Title>
 
       {/* Скролл-зона со списком */}
-      <div style={{ flex: 1, overflowY: 'auto', width: "100%", textAlign: 'center'}}>
+      <div style={{ flex: 1, overflowY: 'auto', width: "100%", textAlign: 'center', display:'flex',
+        flexDirection:'column', gap:'18px'
+      }}>
         {/* <div style={{marginTop: "20px"}}>
         <Typography.Text style={{ opacity: 0.5, textAlign: 'center'}}>
           Вы не провели ещё ни одного квиза.
@@ -31,8 +33,17 @@ const App = () => (
           <QuizCard 
             title="Docker"
             date="22.09"
-            leftIcon={<img src={memberIcon} style={{ width: 28 }} />}
+            leftIcon={<img src={memberIcon} style={{ width: 28, height:28  }} />}
             leftText="14"
+          />
+
+      <QuizCard 
+            title="Смерть Сократа"
+            date="19.09"
+            leftIcon={<img src={trophyIcon} style={{ width: 28, height:28 }} />}
+            leftText="3 место"
+            rightIcon={<img src={starIcon} style={{ width: 28, height:28  }} />}
+            rightContent="6 из 10"
           />
       </div>
 
