@@ -23,3 +23,48 @@ body {
 .avatar img{
   object-fit: contain;
 }
+
+/* === Модалка инструкции === */
+
+/* Плавное появление задника */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Плавное исчезновение задника */
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+/* Плавное появление модалки (чуть подрастает + проявляется) */
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* Плавное исчезновение модалки */
+@keyframes modalOut {
+  from { opacity: 1; transform: scale(1); }
+  to   { opacity: 0; transform: scale(0.92); }
+}
+
+.overlay {
+  animation: fadeIn 0.25s ease forwards;
+}
+
+.overlay.closing {
+  animation: fadeOut 0.25s ease forwards;
+}
+
+.modal {
+  animation: modalIn 0.25s ease forwards;
+}
+
+.modal.closing {
+  animation: modalOut 0.25s ease forwards;
+}
+
+.instruction::-webkit-scrollbar { display: none; }
+.instruction { scrollbar-width: none; -ms-overflow-style: none; }
